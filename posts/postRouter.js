@@ -1,4 +1,4 @@
-const express = "express";
+const express = require("express");
 const router = express.Router();
 const db_posts = require("./postDb");
 const mws = require("../mw");
@@ -26,9 +26,7 @@ router.put("/:id", mws.postId, async (req, res) => {
   try {
     (await db_posts.update(req.params.id, req.body))
       ? res.status(200).json({ id: req.params.id, ...req.body })
-      : res
-          .status(404)
-          .json({ message: `Cannot find post.` });
+      : res.status(404).json({ message: `Cannot find post.` });
   } catch (err) {
     res.status(500).json({ error: `¯\_(ツ)_/¯` });
   }
@@ -38,15 +36,11 @@ router.delete("/:id", mws.postId, async (req, res) => {
   try {
     (await db_posts.remove(req.params.id))
       ? res.status(200).json({ message: `Post was removed.` })
-      : res
-          .status(404)
-          .json({ message: `Invalid post.` });
+      : res.status(404).json({ message: `Invalid post.` });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        error: `¯\_(ツ)_/¯`
-      });
+    res.status(500).json({
+      error: `¯\_(ツ)_/¯`
+    });
   }
 });
 
