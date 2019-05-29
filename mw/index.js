@@ -1,8 +1,10 @@
 const logger = require("./logger");
+const validatedId = require('./validatedId').default
 
 const mws = {
   logger,
-  validatedPost
+  validatedPost,
+  validatedId,
 };
 
 module.exports = mws;
