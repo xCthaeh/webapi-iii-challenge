@@ -1,6 +1,7 @@
 const logger = require("./logger");
+const validatedPost = require('./validatedPost')
 const validatedId = require("./validatedId").default;
-const validateUser = require("./validateUser");
+const validatedUser = require("./validatedUser");
 
 const mws = {
   logger,

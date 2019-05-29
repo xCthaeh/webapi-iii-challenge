@@ -1,7 +1,8 @@
 const express = require("express");
 const server = express();
+const UserRouter = require("./users/userRouter");
 
-server.use(express.json(), mw.logger);
+server.use(express.json(), mw.logger, "/api/users", UserRouter);
 
 //custom middleware
 
