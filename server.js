@@ -2,6 +2,7 @@ const express = require("express");
 const server = express();
 
 server.use(express.json(), mw.logger);
+
 //custom middleware
 
 const mws = require("./mw");
