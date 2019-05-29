@@ -1,7 +1,8 @@
 const logger = require("./logger");
 
 const mws = {
-  logger
+  logger,
+  validatedPost
 };
 
 module.exports = mws;
