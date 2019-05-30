@@ -11,7 +11,7 @@ server.use("/api/users", UserRouter);
 server.use("/api/posts", PostRouter);
 
 server.get("/", (req, res) => {
-  res.send(`<h2>Api is working on ${port} :P </h2>`);
+  res.send(`<h2>Api is working :P </h2>`);
 });
 
 module.exports = server;
